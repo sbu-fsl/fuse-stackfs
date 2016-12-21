@@ -1,0 +1,126 @@
+function plotData()
+
+req_count_type = 0;
+
+%Hard coded experiment details
+details{1} = 'Experiment type : Sequential Write of 45 GB';
+details{2} = 'write\_back\_cache : No (default)';
+details{3} = 'max\_write : No , 128KB (default)';
+details{4} = 'big\_writes : No (default)';
+details{5} = 'max\_bg\_length : 12 (default)';
+details{6} = 'congestion\_threshold : 9 (deafault)';
+
+%Extract different request types
+dir = pwd();
+fileID = fopen(strcat(dir, '/../raw_data/different_request_types.txt'), 'r');
+while (!feof(fileID))
+	text_line = fgetl(fileID);
+	req_count_type++;
+	req_types{req_count_type} = text_line;
+endwhile
+fclose(fileID);
+
+%Extract different queue lenegths
+dir = pwd();
+fileID = fopen(strcat(dir, '/../raw_data/queue_lengths'), 'r');
+queue_lengths = fscanf(fileID,'%f');
+fclose(fileID);
+queue_types{1} = 'Background Queue';
+queue_types{2} = 'Pending Queue';
+queue_types{3} = 'Processing Queue';
+
+%Extract different req's timing values
+for i=1:req_count_type
+	%bg_queue
+	dir = pwd();
+	fileID = fopen(strcat(dir, '/../raw_data/', req_types{i}, '_background_distribution.txt'), 'r');
+	bg_queue = fscanf(fileID,'%f');
+	fclose(fileID);
+	%pending_queue
+	dir = pwd();
+        fileID = fopen(strcat(dir, '/../raw_data/', req_types{i}, '_pending_distribution.txt'), 'r');
+        pending_queue = fscanf(fileID,'%f');
+        fclose(fileID);
+	%processing_queue
+	dir = pwd();
+        fileID = fopen(strcat(dir, '/../raw_data/', req_types{i}, '_processing_distribution.txt'), 'r');
+        processing_queue = fscanf(fileID,'%f');
+        fclose(fileID);
+	%user_processing_queue
+	dir = pwd();
+        fileID = fopen(strcat(dir, '/../raw_data/', req_types{i}, '_user_processing_distribution.txt'), 'r');
+        user_processing_queue = fscanf(fileID,'%f');
+        fclose(fileID);
+	big_matrix = [bg_queue, pending_queue, processing_queue, user_processing_queue];
+	Matrix{i} = big_matrix;
+end
+%req_types -> different req names, 
+%Matrix    -> details about each req
+
+write_index = 0;
+for i=1:req_count_type
+	if (strcmp(req_types{i}, 'FUSE_WRITE'))
+		write_index = i;
+end
+write_index
+%Plot for queue_length
+%{
+figure;
+clf;
+hold on;
+fig1 = bar(queue_lengths);
+set(gca, 'XTick', 1:3, 'XTickLabel', queue_types);
+%set(gca, "yaxislocation", "zero");
+axis([0 4 0 max(queue_lengths)+20]);
+%grid minor;
+x = [1:numel(queue_lengths)];
+for i = 1:numel(queue_lengths)
+	t = text(x(i),queue_lengths(i), num2str(queue_lengths(i), '%d'), 'HorizontalAlignment','center', 'VerticalAlignment','bottom');
+	set(t, 'fontsize', 15);
+end
+t = xlabel('Different Queue Types');
+set(t, 'fontsize', 15);
+t = ylabel('Number of Requests in each queue');
+set(t, 'fontsize', 15);
+t = title ('Maximum No. of requests in each queue (at a given point of time)');
+set(t, 'fontsize', 15);
+text(0.4, max(queue_lengths)+10, details, 'Color', 'red', 'FontSize', 14);
+hold off
+dir = pwd();
+print(strcat(dir, '/../plots/queuelengths.png'), "-dpng");
+close();
+%}
+
+%Total Req Count distribution accross all the req's
+
+%Total_req_count_dist=[];
+%for i = 1:req_count_type
+%	rows = size(Matrix{i})(1);
+%	columns = size(Matrix{i})(2);
+%	temp = [];
+%	for j=1:columns
+%		temp = [temp Matrix{i}(rows, j)];
+%	end
+%	Total_req_count_dist = [Total_req_count_dist ; temp];
+%end
+
+%for i = 1:req_count_type
+%	temp_req_types{i} = strrep(req_types{i}, '_', ' ');
+%end
+%figure;
+%clf;
+%hold on;
+%fig1 = bar(Total_req_count_dist);
+%set(gca, 'XTick', 1:req_count_type, 'XTickLabel', temp_req_types, 'fontsize', 7);
+%axis([0 req_count_type+1 0 max(max(Total_req_count_dist))+50000]);
+%x = [1:req_count_type];
+%for i = 1:req_count_type
+%        t = text(x(i), Total_req_count_dist(i, 2) + 2000, num2str(Total_req_count_dist(i, 2), '%d'), 'HorizontalAlignment','center', 'VerticalAlignment','bottom');
+%        set(t, 'fontsize', 15);
+%end
+%leg = legend('bg queue', 'pending queue', 'processing queue', 'user space processing queue');
+%set(leg, 'FontSize', 10);
+%xlabel('Different Request Types', 'fontsize', 15);
+%ylabel('Total Number of Requests', 'fontsize', 15);
+%title ('Total Request Count Distribution', 'fontsize', 15);
+%text(5, max(max(Total_req_count_dist))+10000, details, 'Color', 'red', 'FontSize', 14);

@@ -1,0 +1,238 @@
+function plot_throughput_comparision1()
+%{
+What does this plot do ?
+1. Read throughput numbers that were obtained from filebench results,
+2. Compare them with Ext4, Fuse-Ext4 results,
+3. Read ops/sec numbers that were obtained from filebench results,
+4. Compare them with Ext4, Fuse-Ext4 results,
+5. Standard deviation numbers but just to check (will remove)
+%}
+
+
+commdir1 = '/Users/Bharath/Downloads/FUSE/fuse-playground/kernel-statistics/';
+commdir2 = '/Users/Bharath/Downloads/FUSE/fuse-playground/kernel-statistics/';
+outputDir = '/Users/Bharath/Downloads/FUSE/fuse-playground/kernel-statistics/plots/';
+
+%Types{1} = 'HDD';
+Types{1} = 'SSD';
+
+work_load_types{1} = 'cr';
+work_load_types{2} = 'preall';
+
+work_load_ops{1} = 'wr';
+work_load_ops{2} = 're';
+work_load_ops{3} = 'de';
+
+io_sizes{1} = '4KB';
+io_sizes{2} = '32KB';
+io_sizes{3} = '128KB';
+io_sizes{4} = '1MB';
+
+threads{1} = 1;
+threads{2} = 32;
+iterations = 3;
+files=[];
+throughput_comp=[];
+
+%X = [1; 2; 3; 4];
+X = [1; 2];
+for t=1:size(Types)(2)
+type=Types{t};
+dir1=strcat(commdir1, sprintf('%s-EXT4-Results', type));
+dir2=strcat(commdir2, sprintf('%s-FUSE-EXT4-Results', type));
+dir3=strcat(commdir1, sprintf('%s-FUSE-OPTS-EXT4-Results', type));
+for i=1:size(work_load_types)(2)
+	work_load_type=work_load_types{i};
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	if (eq(strcmp(work_load_type, 'cr'), 1))
+		work_load_ops = [];
+		work_load_ops{1} = 'wr';
+		io_sizes = [];
+		io_sizes{1} = '4KB';
+		files{1} = '4M';
+	elseif (eq(strcmp(work_load_type, 'preall'), 1))
+		work_load_ops = [];
+		work_load_ops{1} = 're';
+		work_load_ops{2} = 'de';
+		io_sizes = [];
+		io_sizes{1} = '4KB';
+	endif
+
+	for j=1:size(work_load_ops)(2)
+		work_load_op=work_load_ops{j};
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		throughput_comp = [];
+		throughput_comp_std = [];
+		ops_sec_comp = [];
+		ops_sec_comp_std = [];
+		for k=1:size(threads)(2)
+			thread=threads{k};
+			%%%%%%%%%%%%%%%%%%%%
+			if ( eq(strcmp(work_load_type, 'cr'), 1) )
+				files{1} = '4Mf';
+				io_sizes{1} = '4KB';
+			elseif ( eq(strcmp(work_load_type, 'preall'), 1) && eq(strcmp(work_load_op, 're'), 1) )
+				files{1} = '1Mf';
+			elseif ( eq(strcmp(work_load_type, 'preall'), 1) && eq(strcmp(work_load_op, 'de'), 1) )
+				if ( eq(strcmp(type, 'HDD'), 1) )
+					files{1} = '2Mf';
+				else
+					files{1} = '4Mf';
+				endif
+			endif
+			for l=1:size(files)(2)
+				file=files{l};
+				%%%%%%%%%%%%%%
+				
+				for m=1:size(io_sizes)(2)
+					io_size=io_sizes{m};
+					%%%%%%%%%%%%%%%%%%%
+					avg_ext4_throughput = [];
+					avg_fuse_ext4_throughput = [];
+					avg_fuse_opts_ext4_throughput = [];
+
+					avg_ext4_ops_sec = [];
+					avg_fuse_ext4_ops_sec = [];
+					avg_fuse_opts_ext4_ops_sec = [];
+
+					for n=1:iterations
+						count=n;
+						%Stat-files-sq-wr-4KB-1th-1f-1
+						inputDir1 = strcat(dir1, sprintf('/Stat-files-%s-%s-%s-%dth-%s-%d/', work_load_type, work_load_op, io_size, thread, file, count));
+						inputDir2 = strcat(dir2, sprintf('/Stat-files-%s-%s-%s-%dth-%s-%d/', work_load_type, work_load_op, io_size, thread, file, count));
+						inputDir3 = strcat(dir3, sprintf('/Stat-files-%s-%s-%s-%dth-%s-%d/', work_load_type, work_load_op, io_size, thread, file, count));
+
+						filename1 = strcat(inputDir1, 'throughput.txt');
+						filename2 = strcat(inputDir2, 'throughput.txt');
+						filename3 = strcat(inputDir2, 'throughput.txt');
+
+						ext4_throughput = load(filename1);
+						fuse_ext4_throughput = load(filename2);
+						fuse_opts_ext4_throughput = load(filename3);
+
+						avg_ext4_throughput = [avg_ext4_throughput ; mean(ext4_throughput)];
+						avg_fuse_ext4_throughput = [avg_fuse_ext4_throughput ; mean(fuse_ext4_throughput)];
+						avg_fuse_opts_ext4_throughput = [avg_fuse_opts_ext4_throughput ; mean(fuse_opts_ext4_throughput)];
+
+						filename1 = strcat(inputDir1, 'ops_sec.txt');
+						filename2 = strcat(inputDir2, 'ops_sec.txt');
+						filename3 = strcat(inputDir3, 'ops_sec.txt');
+
+						ext4_ops_sec = load(filename1);
+						fuse_ext4_ops_sec = load(filename2);
+						fuse_opts_ext4_ops_sec = load(filename3);
+
+						avg_ext4_ops_sec = [avg_ext4_ops_sec ; mean(ext4_ops_sec)];
+						avg_fuse_ext4_ops_sec = [avg_fuse_ext4_ops_sec ; mean(fuse_ext4_ops_sec)];
+						avg_fuse_opts_ext4_ops_sec = [avg_fuse_opts_ext4_ops_sec ; mean(fuse_opts_ext4_ops_sec)];
+					end
+				end
+			end
+			throughput_comp = [ throughput_comp; mean(avg_ext4_throughput)  mean(avg_fuse_ext4_throughput)];
+			throughput_comp_std = [throughput_comp_std; std(avg_ext4_throughput) std(avg_fuse_ext4_throughput)];
+%			ops_sec_comp = [ops_sec_comp ; mean(avg_ext4_ops_sec) mean(avg_fuse_ext4_ops_sec) ((mean(avg_ext4_ops_sec) - mean(avg_fuse_ext4_ops_sec))/mean(avg_ext4_ops_sec))*100];
+			A = mean(avg_ext4_ops_sec);
+                        B = mean(avg_fuse_ext4_ops_sec);
+                        C = mean(avg_fuse_opts_ext4_ops_sec);
+
+			std_A = std(avg_ext4_ops_sec);
+                        std_B = std(avg_fuse_ext4_ops_sec);
+                        std_C = std(avg_fuse_opts_ext4_ops_sec);
+			
+
+                        ops_sec_comp = [ops_sec_comp ; A B C ((A-B)/A)*100  ((A-C)/A)*100];
+			ops_sec_comp_std = [ops_sec_comp_std ; (std_A/A)*100 (std_B/B)*100 (std_C/C)*100 ];
+	
+		end
+		%%%%%%%%Figures%%%%%%%%%
+		%throughput_comp
+		work_load_type
+		work_load_op
+		thread
+		ops_sec_comp_std
+%{
+		figure;
+		clf;
+		hold on;
+		h = bar(throughput_comp);
+		a = throughput_comp(:, 1);
+		b = num2str(a);
+		c = cellstr(b);
+		dx=0.5;
+		dy=0.1;
+		text(X-dx, throughput_comp(:, 1)+dy, c, 'FontSize', 10);
+
+		a = throughput_comp(:, 2);
+		b = num2str(a);
+		c = cellstr(b);
+		dx=0.5;
+		dy=0.1;
+		text(X, throughput_comp(:, 2)+dy, c, 'FontSize', 10);
+
+		if (max(max(throughput_comp)) == 0)
+			axis([0 size(throughput_comp)(1)+1 0 2]);
+		else
+			axis([0 size(throughput_comp)(1)+1 0 max(max(throughput_comp))*1.5]);
+		endif
+		plot_threads{1} = '1th';
+		plot_threads{2} = '32th';	
+		set(gca, 'XTick', 1:2, 'XTickLabel', plot_threads);
+		xlabel('Different threads', 'fontsize', 15);
+		h_leg = legend('Ext4', 'Fuse Ext4');
+		set(h_leg, 'fontsize', 10);
+		if (strcmp(work_load_op, 're'))
+			ylabel('Read ThroughPut (in mb/s)', 'fontsize', 15);
+		elseif (strcmp(work_load_op, 'wr'))
+			ylabel('Write ThroughPut (in mb/s)', 'fontsize', 15);
+		endif
+		title(sprintf('%s %s %s %s', work_load_type, work_load_op, io_sizes{1}, file), 'fontsize', 15);
+		hold off;
+		outfilename = strcat(outputDir, sprintf('/ThroughPut/%s/ThroughPut-comp-%s-%s-%s.png', type, work_load_type, work_load_op, file));
+		print(outfilename, "-dpng");
+           	close();
+		%ops_sec_comp
+		figure;
+		clf;
+		hold on;
+		h = bar(ops_sec_comp);
+		a = ops_sec_comp(:, 1);
+		b = num2str(a);
+		c = cellstr(b);
+		dx=0.5;
+		dy=20;
+		text(X-dx, ops_sec_comp(:, 1)+dy, c, 'FontSize', 10);
+
+		a = ops_sec_comp(:, 2);
+		b = num2str(a);
+		c = cellstr(b);
+		dx=0.5;
+		dy=20;
+		text(X, ops_sec_comp(:, 2)+dy, c, 'FontSize', 10);
+
+		if (max(max(ops_sec_comp)) == 0)
+			axis([0 size(ops_sec_comp)(1)+1 0 2]);
+		else
+			axis([0 size(ops_sec_comp)(1)+1 0 max(max(ops_sec_comp))*1.5]);
+		endif
+		plot_threads{1} = '1th';
+		plot_threads{2} = '32th';	
+		set(gca, 'XTick', 1:2, 'XTickLabel', plot_threads);
+		xlabel('Different threads', 'fontsize', 15);
+		h_leg = legend('Ext4', 'Fuse Ext4');
+		set(h_leg, 'fontsize', 10);
+		if (strcmp(work_load_op, 're'))
+			ylabel('Read Operations (in absolute #)', 'fontsize', 15);
+		elseif (strcmp(work_load_op, 'wr'))
+			ylabel('Write Operations (in absolute #)', 'fontsize', 15);
+		elseif (strcmp(work_load_op, 'de'))
+			ylabel('Delete Operations (in absolute #)', 'fontsize', 15);
+		endif
+		title(sprintf('%s %s %s %s', work_load_type, work_load_op, io_sizes{1}, file), 'fontsize', 15);
+		hold off;
+		outfilename = strcat(outputDir, sprintf('/OpsPerSec/%s/OpsPerSec-comp-%s-%s-%s.png', type, work_load_type, work_load_op, file));
+		print(outfilename, "-dpng");
+           	close();	
+%}
+	end
+end
+end
