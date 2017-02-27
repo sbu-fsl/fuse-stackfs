@@ -1,0 +1,38 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 2393MB of shared memory
+0.002: Populating and pre-allocating filesets
+0.887: bigfileset populated: 1000000 files, avg. dir. width = 1000, avg. dir. depth = 2.0, 0 leafdirs, 3906.250MB total size
+0.887: Removing bigfileset tree (if exists)
+0.890: Pre-allocating directories in bigfileset tree
+0.950: Pre-allocating files in bigfileset tree
+65.645: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+65.645: Population and pre-allocation of filesets completed
+70.257: Attempting to create fileset more than once, ignoring
+70.263: Starting 1 fileopen instances
+71.315: Running...
+81.317: Per-Operation Breakdown
+finish               80437ops     8043ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.05ms]
+close-file           80437ops     8043ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.18ms]
+read-file            80439ops     8043ops/s  31.4mb/s      2.9ms/op [0.07ms - 904.54ms]
+open1                80469ops     8046ops/s   0.0mb/s      1.0ms/op [0.02ms - 143.92ms]
+81.317: IO Summary: 241345 ops 24131.674 ops/s 8043/0 rd/wr  31.4mb/s   4.0ms/op
+91.318: Per-Operation Breakdown
+finish               83599ops     8359ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.03ms]
+close-file           83599ops     8359ops/s   0.0mb/s      0.0ms/op [0.00ms -  6.28ms]
+read-file            83600ops     8359ops/s  32.7mb/s      3.3ms/op [0.19ms - 527.58ms]
+open1                83598ops     8359ops/s   0.0mb/s      0.5ms/op [0.02ms - 199.90ms]
+91.318: IO Summary: 250797 ops 25078.108 ops/s 8359/0 rd/wr  32.7mb/s   3.7ms/op
+101.319: Per-Operation Breakdown
+finish               86959ops     8695ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.12ms]
+close-file           86958ops     8695ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.89ms]
+read-file            86942ops     8693ops/s  34.0mb/s      3.2ms/op [0.19ms - 541.17ms]
+open1                86933ops     8693ops/s   0.0mb/s      0.2ms/op [0.02ms - 95.58ms]
+101.319: IO Summary: 260833 ops 26081.099 ops/s 8693/0 rd/wr  34.0mb/s   3.4ms/op
+108.320: Run took 37 seconds...
+108.320: Per-Operation Breakdown
+finish               49037ops     7004ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.03ms]
+close-file           49037ops     7004ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.23ms]
+read-file            49037ops     7004ops/s  27.4mb/s      3.5ms/op [0.20ms - 515.69ms]
+open1                49032ops     7004ops/s   0.0mb/s      0.4ms/op [0.02ms - 171.35ms]
+108.320: IO Summary: 147106 ops 21012.309 ops/s 7004/0 rd/wr  27.4mb/s   3.9ms/op
+108.320: Shutting down processes

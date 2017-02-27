@@ -1,0 +1,620 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 2393MB of shared memory
+0.624: Populating and pre-allocating filesets
+2.032: bigfileset populated: 2000000 files, avg. dir. width = 1000, avg. dir. depth = 2.1, 0 leafdirs, 7812.500MB total size
+2.032: Removing bigfileset tree (if exists)
+2.034: Pre-allocating directories in bigfileset tree
+2.134: Pre-allocating files in bigfileset tree
+837.054: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+837.054: Population and pre-allocation of filesets completed
+842.871: Attempting to create fileset more than once, ignoring
+842.877: Starting 1 fileopen instances
+843.939: Running...
+853.941: Per-Operation Breakdown
+delete-file          2163ops      216ops/s   0.0mb/s      4.6ms/op [0.10ms - 303.50ms]
+853.941: IO Summary:  2163 ops 216.259 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+863.942: Per-Operation Breakdown
+delete-file          10311ops     1031ops/s   0.0mb/s      1.0ms/op [0.09ms - 127.14ms]
+863.942: IO Summary: 10311 ops 1030.964 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+873.944: Per-Operation Breakdown
+delete-file          18526ops     1852ops/s   0.0mb/s      0.5ms/op [0.09ms - 982.91ms]
+873.944: IO Summary: 18526 ops 1852.355 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+883.945: Per-Operation Breakdown
+delete-file          2ops        0ops/s   0.0mb/s   5013.2ms/op [1752.86ms - 8273.64ms]
+883.945: IO Summary:     2 ops 0.200 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+893.947: Per-Operation Breakdown
+delete-file          18614ops     1861ops/s   0.0mb/s      0.6ms/op [0.06ms - 1845.38ms]
+893.947: IO Summary: 18614 ops 1861.152 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+903.949: Per-Operation Breakdown
+delete-file          16200ops     1620ops/s   0.0mb/s      0.6ms/op [0.09ms - 2854.60ms]
+903.949: IO Summary: 16200 ops 1619.727 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+913.950: Per-Operation Breakdown
+delete-file          10807ops     1081ops/s   0.0mb/s      0.8ms/op [0.09ms - 5119.62ms]
+913.950: IO Summary: 10807 ops 1080.535 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+923.952: Per-Operation Breakdown
+delete-file          1378ops      138ops/s   0.0mb/s      8.0ms/op [0.09ms - 4955.77ms]
+923.952: IO Summary:  1378 ops 137.777 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+933.953: Per-Operation Breakdown
+delete-file          8999ops      900ops/s   0.0mb/s      1.1ms/op [0.10ms - 1770.29ms]
+933.953: IO Summary:  8999 ops 899.771 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+943.955: Per-Operation Breakdown
+delete-file          16318ops     1632ops/s   0.0mb/s      0.4ms/op [0.09ms - 1006.58ms]
+943.955: IO Summary: 16318 ops 1631.580 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+953.957: Per-Operation Breakdown
+delete-file          9686ops      968ops/s   0.0mb/s      1.5ms/op [0.09ms - 4872.36ms]
+953.957: IO Summary:  9686 ops 968.450 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+963.958: Per-Operation Breakdown
+delete-file          8996ops      899ops/s   0.0mb/s      1.0ms/op [0.09ms - 6001.99ms]
+963.958: IO Summary:  8996 ops 899.437 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+973.960: Per-Operation Breakdown
+delete-file          7000ops      700ops/s   0.0mb/s      1.5ms/op [0.09ms - 2711.92ms]
+973.960: IO Summary:  7000 ops 699.898 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+983.961: Per-Operation Breakdown
+delete-file          24684ops     2468ops/s   0.0mb/s      0.3ms/op [0.09ms - 916.81ms]
+983.961: IO Summary: 24684 ops 2468.095 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+993.963: Per-Operation Breakdown
+delete-file          8534ops      853ops/s   0.0mb/s      1.4ms/op [0.09ms - 8596.61ms]
+993.963: IO Summary:  8534 ops 853.290 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1003.965: Per-Operation Breakdown
+delete-file          8492ops      849ops/s   0.0mb/s      1.1ms/op [0.11ms - 6157.60ms]
+1003.965: IO Summary:  8492 ops 849.019 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1013.967: Per-Operation Breakdown
+delete-file          291ops       29ops/s   0.0mb/s     35.8ms/op [0.12ms - 7823.73ms]
+1013.967: IO Summary:   291 ops 29.093 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1023.969: Per-Operation Breakdown
+delete-file          20926ops     2092ops/s   0.0mb/s      0.5ms/op [0.09ms - 1604.26ms]
+1023.969: IO Summary: 20926 ops 2092.260 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1033.971: Per-Operation Breakdown
+delete-file          12073ops     1207ops/s   0.0mb/s      0.8ms/op [0.10ms - 5070.82ms]
+1033.971: IO Summary: 12073 ops 1207.111 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1043.973: Per-Operation Breakdown
+delete-file          9001ops      900ops/s   0.0mb/s      1.1ms/op [0.09ms - 3745.98ms]
+1043.973: IO Summary:  9001 ops 899.918 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1053.975: Per-Operation Breakdown
+delete-file          999ops      100ops/s   0.0mb/s      7.1ms/op [0.09ms - 4839.84ms]
+1053.975: IO Summary:   999 ops 99.877 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1063.977: Per-Operation Breakdown
+delete-file          15245ops     1524ops/s   0.0mb/s      0.9ms/op [0.10ms - 3663.88ms]
+1063.977: IO Summary: 15245 ops 1524.275 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1073.979: Per-Operation Breakdown
+delete-file          13479ops     1348ops/s   0.0mb/s      0.3ms/op [0.09ms - 76.01ms]
+1073.979: IO Summary: 13479 ops 1347.639 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1083.981: Per-Operation Breakdown
+delete-file          8456ops      845ops/s   0.0mb/s      1.4ms/op [0.10ms - 8084.49ms]
+1083.981: IO Summary:  8456 ops 845.428 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1093.983: Per-Operation Breakdown
+delete-file          8432ops      843ops/s   0.0mb/s      1.0ms/op [0.10ms - 5039.39ms]
+1093.983: IO Summary:  8432 ops 843.030 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1103.985: Per-Operation Breakdown
+delete-file          9388ops      939ops/s   0.0mb/s      1.6ms/op [0.10ms - 6850.45ms]
+1103.985: IO Summary:  9388 ops 938.620 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1113.986: Per-Operation Breakdown
+delete-file          16365ops     1636ops/s   0.0mb/s      0.4ms/op [0.09ms - 944.88ms]
+1113.986: IO Summary: 16365 ops 1636.240 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1123.988: Per-Operation Breakdown
+delete-file          8437ops      844ops/s   0.0mb/s      1.0ms/op [0.09ms - 5169.15ms]
+1123.988: IO Summary:  8437 ops 843.579 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1133.989: Per-Operation Breakdown
+delete-file          9198ops      920ops/s   0.0mb/s      1.6ms/op [0.09ms - 5551.09ms]
+1133.989: IO Summary:  9198 ops 919.674 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1143.991: Per-Operation Breakdown
+delete-file          1046ops      105ops/s   0.0mb/s      9.5ms/op [0.09ms - 3752.91ms]
+1143.991: IO Summary:  1046 ops 104.585 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1153.993: Per-Operation Breakdown
+delete-file          25570ops     2557ops/s   0.0mb/s      0.3ms/op [0.09ms - 787.12ms]
+1153.993: IO Summary: 25570 ops 2556.605 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1163.994: Per-Operation Breakdown
+delete-file          8388ops      839ops/s   0.0mb/s      1.0ms/op [0.10ms - 5359.59ms]
+1163.994: IO Summary:  8388 ops 838.649 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1173.997: Per-Operation Breakdown
+delete-file          8492ops      849ops/s   0.0mb/s      1.0ms/op [0.09ms - 4793.12ms]
+1173.997: IO Summary:  8492 ops 849.027 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1183.999: Per-Operation Breakdown
+delete-file          1519ops      152ops/s   0.0mb/s      9.2ms/op [0.10ms - 5073.86ms]
+1183.999: IO Summary:  1519 ops 151.865 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1194.001: Per-Operation Breakdown
+delete-file          21546ops     2154ops/s   0.0mb/s      0.5ms/op [0.09ms - 1728.29ms]
+1194.001: IO Summary: 21546 ops 2154.293 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1204.003: Per-Operation Breakdown
+delete-file          11501ops     1150ops/s   0.0mb/s      0.8ms/op [0.09ms - 5070.47ms]
+1204.003: IO Summary: 11501 ops 1149.880 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1214.004: Per-Operation Breakdown
+delete-file          9215ops      921ops/s   0.0mb/s      0.9ms/op [0.09ms - 5298.25ms]
+1214.004: IO Summary:  9215 ops 921.354 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1224.006: Per-Operation Breakdown
+delete-file          1724ops      172ops/s   0.0mb/s      6.5ms/op [0.10ms - 4500.74ms]
+1224.006: IO Summary:  1724 ops 172.372 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1234.007: Per-Operation Breakdown
+delete-file          12914ops     1291ops/s   0.0mb/s      0.8ms/op [0.09ms - 1724.73ms]
+1234.007: IO Summary: 12914 ops 1291.244 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1244.009: Per-Operation Breakdown
+delete-file          15490ops     1549ops/s   0.0mb/s      0.3ms/op [0.09ms - 158.01ms]
+1244.009: IO Summary: 15490 ops 1548.748 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1254.011: Per-Operation Breakdown
+delete-file          5976ops      597ops/s   0.0mb/s      2.4ms/op [0.09ms - 8109.65ms]
+1254.011: IO Summary:  5976 ops 597.490 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1264.013: Per-Operation Breakdown
+delete-file          9624ops      962ops/s   0.0mb/s      1.0ms/op [0.09ms - 2498.32ms]
+1264.013: IO Summary:  9624 ops 962.204 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1274.015: Per-Operation Breakdown
+delete-file          995ops       99ops/s   0.0mb/s      9.0ms/op [0.10ms - 4480.43ms]
+1274.015: IO Summary:   995 ops 99.479 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1284.017: Per-Operation Breakdown
+delete-file          16998ops     1699ops/s   0.0mb/s      0.6ms/op [0.09ms - 1761.67ms]
+1284.017: IO Summary: 16998 ops 1699.494 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1294.019: Per-Operation Breakdown
+delete-file          15876ops     1587ops/s   0.0mb/s      0.7ms/op [0.09ms - 3173.06ms]
+1294.019: IO Summary: 15876 ops 1587.348 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1304.021: Per-Operation Breakdown
+delete-file          10563ops     1056ops/s   0.0mb/s      0.9ms/op [0.10ms - 5474.40ms]
+1304.021: IO Summary: 10563 ops 1056.084 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1314.023: Per-Operation Breakdown
+delete-file          1329ops      133ops/s   0.0mb/s      7.9ms/op [0.11ms - 4451.60ms]
+1314.023: IO Summary:  1329 ops 132.872 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1324.025: Per-Operation Breakdown
+delete-file          7232ops      723ops/s   0.0mb/s      1.3ms/op [0.10ms - 4283.61ms]
+1324.025: IO Summary:  7232 ops 723.054 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1334.027: Per-Operation Breakdown
+delete-file          24825ops     2482ops/s   0.0mb/s      0.3ms/op [0.09ms - 829.55ms]
+1334.027: IO Summary: 24825 ops 2482.099 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1344.029: Per-Operation Breakdown
+delete-file          2527ops      253ops/s   0.0mb/s      5.2ms/op [0.10ms - 10565.00ms]
+1344.029: IO Summary:  2527 ops 252.646 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1354.031: Per-Operation Breakdown
+delete-file          12647ops     1264ops/s   0.0mb/s      0.7ms/op [0.09ms - 2619.31ms]
+1354.031: IO Summary: 12647 ops 1264.477 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1364.033: Per-Operation Breakdown
+delete-file          1010ops      101ops/s   0.0mb/s      9.7ms/op [0.10ms - 4196.62ms]
+1364.033: IO Summary:  1010 ops 100.977 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1374.035: Per-Operation Breakdown
+delete-file          9990ops      999ops/s   0.0mb/s      0.9ms/op [0.09ms - 3618.64ms]
+1374.035: IO Summary:  9990 ops 998.813 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1384.037: Per-Operation Breakdown
+delete-file          16000ops     1600ops/s   0.0mb/s      0.6ms/op [0.09ms - 4380.11ms]
+1384.037: IO Summary: 16000 ops 1599.742 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1394.039: Per-Operation Breakdown
+delete-file          10044ops     1004ops/s   0.0mb/s      1.1ms/op [0.09ms - 5228.32ms]
+1394.039: IO Summary: 10044 ops 1004.196 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1404.041: Per-Operation Breakdown
+delete-file          6843ops      684ops/s   0.0mb/s      1.4ms/op [0.10ms - 8049.55ms]
+1404.041: IO Summary:  6843 ops 684.152 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1414.044: Per-Operation Breakdown
+delete-file          2947ops      295ops/s   0.0mb/s      3.4ms/op [0.10ms - 2722.61ms]
+1414.044: IO Summary:  2947 ops 294.637 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1424.045: Per-Operation Breakdown
+delete-file          22166ops     2216ops/s   0.0mb/s      0.4ms/op [0.09ms - 2355.49ms]
+1424.045: IO Summary: 22166 ops 2216.271 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1434.047: Per-Operation Breakdown
+delete-file          7040ops      704ops/s   0.0mb/s      1.4ms/op [0.09ms - 6530.94ms]
+1434.047: IO Summary:  7040 ops 703.890 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1444.049: Per-Operation Breakdown
+delete-file          11960ops     1196ops/s   0.0mb/s      0.8ms/op [0.09ms - 5472.90ms]
+1444.049: IO Summary: 11960 ops 1195.781 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1454.051: Per-Operation Breakdown
+delete-file          2005ops      200ops/s   0.0mb/s      3.8ms/op [0.09ms - 2072.52ms]
+1454.051: IO Summary:  2005 ops 200.454 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1464.053: Per-Operation Breakdown
+delete-file          7673ops      767ops/s   0.0mb/s      1.6ms/op [0.10ms - 5019.84ms]
+1464.053: IO Summary:  7672 ops 767.057 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1474.054: Per-Operation Breakdown
+delete-file          23132ops     2313ops/s   0.0mb/s      0.4ms/op [0.09ms - 1201.15ms]
+1474.054: IO Summary: 23132 ops 2312.882 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1484.057: Per-Operation Breakdown
+delete-file          2056ops      206ops/s   0.0mb/s      0.3ms/op [0.10ms -  8.76ms]
+1484.057: IO Summary:  2056 ops 205.552 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1494.058: Per-Operation Breakdown
+delete-file          9134ops      913ops/s   0.0mb/s      2.1ms/op [0.09ms - 10754.21ms]
+1494.058: IO Summary:  9134 ops 913.263 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1504.060: Per-Operation Breakdown
+delete-file          10ops        1ops/s   0.0mb/s    860.0ms/op [0.31ms - 5130.64ms]
+1504.060: IO Summary:    10 ops 1.000 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1514.061: Per-Operation Breakdown
+delete-file          17930ops     1793ops/s   0.0mb/s      0.6ms/op [0.07ms - 1737.58ms]
+1514.061: IO Summary: 17930 ops 1792.797 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1524.063: Per-Operation Breakdown
+delete-file          10919ops     1092ops/s   0.0mb/s      0.3ms/op [0.09ms - 636.63ms]
+1524.063: IO Summary: 10919 ops 1091.679 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1534.065: Per-Operation Breakdown
+delete-file          8260ops      826ops/s   0.0mb/s      1.4ms/op [0.10ms - 9107.72ms]
+1534.065: IO Summary:  8260 ops 825.862 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1544.067: Per-Operation Breakdown
+delete-file          8334ops      833ops/s   0.0mb/s      1.1ms/op [0.09ms - 5903.19ms]
+1544.067: IO Summary:  8334 ops 833.287 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1554.068: Per-Operation Breakdown
+delete-file          1547ops      155ops/s   0.0mb/s      9.7ms/op [0.10ms - 8340.94ms]
+1554.068: IO Summary:  1547 ops 154.680 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1564.069: Per-Operation Breakdown
+delete-file          17695ops     1769ops/s   0.0mb/s      0.6ms/op [0.09ms - 2173.47ms]
+1564.069: IO Summary: 17695 ops 1769.257 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1574.071: Per-Operation Breakdown
+delete-file          14284ops     1428ops/s   0.0mb/s      0.3ms/op [0.09ms - 88.02ms]
+1574.071: IO Summary: 14284 ops 1428.212 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1584.072: Per-Operation Breakdown
+delete-file          7274ops      727ops/s   0.0mb/s      2.2ms/op [0.09ms - 9964.09ms]
+1584.072: IO Summary:  7274 ops 727.291 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1594.075: Per-Operation Breakdown
+delete-file          1748ops      175ops/s   0.0mb/s      5.6ms/op [0.10ms - 7300.84ms]
+1594.075: IO Summary:  1748 ops 174.759 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1604.076: Per-Operation Breakdown
+delete-file          15698ops     1570ops/s   0.0mb/s      0.6ms/op [0.09ms - 1796.80ms]
+1604.076: IO Summary: 15698 ops 1569.550 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1614.078: Per-Operation Breakdown
+delete-file          12986ops     1298ops/s   0.0mb/s      0.3ms/op [0.10ms - 354.33ms]
+1614.078: IO Summary: 12986 ops 1298.368 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1624.080: Per-Operation Breakdown
+delete-file          8279ops      828ops/s   0.0mb/s      1.3ms/op [0.09ms - 7379.39ms]
+1624.080: IO Summary:  8279 ops 827.735 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1634.082: Per-Operation Breakdown
+delete-file          8295ops      829ops/s   0.0mb/s      1.1ms/op [0.09ms - 5332.83ms]
+1634.083: IO Summary:  8295 ops 829.329 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1644.085: Per-Operation Breakdown
+delete-file          748ops       75ops/s   0.0mb/s     18.1ms/op [0.10ms - 7960.45ms]
+1644.085: IO Summary:   748 ops 74.782 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1654.086: Per-Operation Breakdown
+delete-file          23943ops     2394ops/s   0.0mb/s      0.5ms/op [0.09ms - 2651.85ms]
+1654.086: IO Summary: 23943 ops 2393.978 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1664.088: Per-Operation Breakdown
+delete-file          9050ops      905ops/s   0.0mb/s      0.8ms/op [0.10ms - 4632.64ms]
+1664.089: IO Summary:  9050 ops 904.817 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1674.091: Per-Operation Breakdown
+delete-file          8346ops      834ops/s   0.0mb/s      1.2ms/op [0.09ms - 7664.72ms]
+1674.091: IO Summary:  8346 ops 834.430 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1684.093: Per-Operation Breakdown
+delete-file          654ops       65ops/s   0.0mb/s     12.2ms/op [0.12ms - 7709.13ms]
+1684.093: IO Summary:   654 ops 65.385 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1694.094: Per-Operation Breakdown
+delete-file          22662ops     2266ops/s   0.0mb/s      0.6ms/op [0.10ms - 4959.16ms]
+1694.094: IO Summary: 22662 ops 2265.920 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1704.096: Per-Operation Breakdown
+delete-file          9344ops      934ops/s   0.0mb/s      0.9ms/op [0.09ms - 4673.30ms]
+1704.096: IO Summary:  9344 ops 934.274 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1714.097: Per-Operation Breakdown
+delete-file          11107ops     1111ops/s   0.0mb/s      0.9ms/op [0.09ms - 5247.07ms]
+1714.098: IO Summary: 11107 ops 1110.517 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1724.099: Per-Operation Breakdown
+delete-file          5490ops      549ops/s   0.0mb/s      0.3ms/op [0.10ms - 10.42ms]
+1724.099: IO Summary:  5490 ops 548.916 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1734.101: Per-Operation Breakdown
+delete-file          1396ops      140ops/s   0.0mb/s     12.1ms/op [0.11ms - 13950.31ms]
+1734.101: IO Summary:  1396 ops 139.580 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1744.102: Per-Operation Breakdown
+delete-file          25401ops     2540ops/s   0.0mb/s      0.4ms/op [0.09ms - 1883.25ms]
+1744.102: IO Summary: 25401 ops 2539.739 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1754.104: Per-Operation Breakdown
+delete-file          8300ops      830ops/s   0.0mb/s      1.2ms/op [0.09ms - 5850.26ms]
+1754.104: IO Summary:  8300 ops 829.835 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1764.106: Per-Operation Breakdown
+delete-file          8289ops      829ops/s   0.0mb/s      1.1ms/op [0.09ms - 6082.49ms]
+1764.106: IO Summary:  8289 ops 828.745 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1774.108: Per-Operation Breakdown
+delete-file          1010ops      101ops/s   0.0mb/s     10.2ms/op [0.09ms - 5309.59ms]
+1774.108: IO Summary:  1010 ops 100.985 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1784.109: Per-Operation Breakdown
+delete-file          11000ops     1100ops/s   0.0mb/s      0.9ms/op [0.09ms - 2144.45ms]
+1784.109: IO Summary: 11000 ops 1099.831 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1794.111: Per-Operation Breakdown
+delete-file          15914ops     1591ops/s   0.0mb/s      0.3ms/op [0.09ms - 722.48ms]
+1794.111: IO Summary: 15914 ops 1591.215 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1804.112: Per-Operation Breakdown
+delete-file          10086ops     1008ops/s   0.0mb/s      1.1ms/op [0.10ms - 5266.44ms]
+1804.112: IO Summary: 10086 ops 1008.420 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1814.114: Per-Operation Breakdown
+delete-file          5001ops      500ops/s   0.0mb/s      2.5ms/op [0.09ms - 4893.81ms]
+1814.114: IO Summary:  5001 ops 500.005 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1824.116: Per-Operation Breakdown
+delete-file          5466ops      547ops/s   0.0mb/s      2.0ms/op [0.10ms - 1721.99ms]
+1824.116: IO Summary:  5466 ops 546.504 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1834.118: Per-Operation Breakdown
+delete-file          22933ops     2293ops/s   0.0mb/s      0.3ms/op [0.09ms - 394.20ms]
+1834.118: IO Summary: 22933 ops 2292.929 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1844.120: Per-Operation Breakdown
+delete-file          7603ops      760ops/s   0.0mb/s      1.5ms/op [0.09ms - 6788.22ms]
+1844.120: IO Summary:  7603 ops 760.137 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1854.122: Per-Operation Breakdown
+delete-file          9251ops      925ops/s   0.0mb/s      0.9ms/op [0.09ms - 4260.40ms]
+1854.122: IO Summary:  9251 ops 924.920 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1864.124: Per-Operation Breakdown
+delete-file          745ops       74ops/s   0.0mb/s     10.9ms/op [0.10ms - 7854.72ms]
+1864.125: IO Summary:   745 ops 74.483 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1874.126: Per-Operation Breakdown
+delete-file          19004ops     1900ops/s   0.0mb/s      0.7ms/op [0.09ms - 4903.31ms]
+1874.126: IO Summary: 19004 ops 1900.108 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1884.128: Per-Operation Breakdown
+delete-file          11890ops     1189ops/s   0.0mb/s      0.8ms/op [0.10ms - 5312.13ms]
+1884.128: IO Summary: 11890 ops 1188.757 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1894.130: Per-Operation Breakdown
+delete-file          10630ops     1063ops/s   0.0mb/s      0.9ms/op [0.10ms - 5490.24ms]
+1894.130: IO Summary: 10630 ops 1062.784 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1904.133: Per-Operation Breakdown
+delete-file          478ops       48ops/s   0.0mb/s     19.1ms/op [0.10ms - 7243.09ms]
+1904.133: IO Summary:   478 ops 47.789 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1914.134: Per-Operation Breakdown
+delete-file          11998ops     1200ops/s   0.0mb/s      0.9ms/op [0.09ms - 1728.15ms]
+1914.134: IO Summary: 11998 ops 1199.607 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1924.136: Per-Operation Breakdown
+delete-file          16519ops     1652ops/s   0.0mb/s      0.4ms/op [0.09ms - 952.60ms]
+1924.136: IO Summary: 16519 ops 1651.595 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1934.139: Per-Operation Breakdown
+delete-file          8280ops      828ops/s   0.0mb/s      1.4ms/op [0.09ms - 8347.45ms]
+1934.139: IO Summary:  8280 ops 827.818 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1944.141: Per-Operation Breakdown
+delete-file          8321ops      832ops/s   0.0mb/s      1.1ms/op [0.09ms - 6118.30ms]
+1944.141: IO Summary:  8321 ops 831.933 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1954.143: Per-Operation Breakdown
+delete-file          882ops       88ops/s   0.0mb/s     15.1ms/op [0.10ms - 6399.03ms]
+1954.143: IO Summary:   882 ops 88.180 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1964.145: Per-Operation Breakdown
+delete-file          20177ops     2017ops/s   0.0mb/s      0.5ms/op [0.09ms - 1406.31ms]
+1964.145: IO Summary: 20177 ops 2017.387 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1974.146: Per-Operation Breakdown
+delete-file          12517ops     1251ops/s   0.0mb/s      0.7ms/op [0.09ms - 3922.17ms]
+1974.146: IO Summary: 12517 ops 1251.495 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1984.149: Per-Operation Breakdown
+delete-file          7134ops      713ops/s   0.0mb/s      1.3ms/op [0.09ms - 5778.98ms]
+1984.149: IO Summary:  7134 ops 713.246 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+1994.151: Per-Operation Breakdown
+delete-file          3207ops      321ops/s   0.0mb/s      2.9ms/op [0.09ms - 4480.23ms]
+1994.151: IO Summary:  3207 ops 320.624 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2004.153: Per-Operation Breakdown
+delete-file          5471ops      547ops/s   0.0mb/s      1.9ms/op [0.10ms - 5157.13ms]
+2004.153: IO Summary:  5471 ops 546.984 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2014.155: Per-Operation Breakdown
+delete-file          25086ops     2508ops/s   0.0mb/s      0.4ms/op [0.09ms - 872.04ms]
+2014.155: IO Summary: 25086 ops 2508.206 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2024.157: Per-Operation Breakdown
+delete-file          6341ops      634ops/s   0.0mb/s      0.8ms/op [0.09ms - 2806.20ms]
+2024.157: IO Summary:  6341 ops 633.985 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2034.159: Per-Operation Breakdown
+delete-file          8302ops      830ops/s   0.0mb/s      1.0ms/op [0.09ms - 5127.04ms]
+2034.159: IO Summary:  8302 ops 830.033 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2044.161: Per-Operation Breakdown
+delete-file          2762ops      276ops/s   0.0mb/s      4.8ms/op [0.09ms - 6004.43ms]
+2044.161: IO Summary:  2762 ops 276.140 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2054.163: Per-Operation Breakdown
+delete-file          5239ops      524ops/s   0.0mb/s      2.3ms/op [0.09ms - 5410.45ms]
+2054.163: IO Summary:  5239 ops 523.805 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2064.165: Per-Operation Breakdown
+delete-file          24222ops     2422ops/s   0.0mb/s      0.3ms/op [0.09ms - 98.84ms]
+2064.165: IO Summary: 24222 ops 2421.838 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2074.167: Per-Operation Breakdown
+delete-file          8303ops      830ops/s   0.0mb/s      1.3ms/op [0.10ms - 7383.60ms]
+2074.167: IO Summary:  8303 ops 830.149 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2084.168: Per-Operation Breakdown
+delete-file          8285ops      828ops/s   0.0mb/s      1.1ms/op [0.09ms - 5137.80ms]
+2084.168: IO Summary:  8285 ops 828.386 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2094.169: Per-Operation Breakdown
+delete-file          952ops       95ops/s   0.0mb/s     13.6ms/op [0.10ms - 7723.96ms]
+2094.169: IO Summary:   952 ops 95.187 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2104.170: Per-Operation Breakdown
+delete-file          24887ops     2488ops/s   0.0mb/s      0.4ms/op [0.10ms - 1216.56ms]
+2104.170: IO Summary: 24887 ops 2488.484 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2114.172: Per-Operation Breakdown
+delete-file          8294ops      829ops/s   0.0mb/s      1.1ms/op [0.10ms - 5263.93ms]
+2114.172: IO Summary:  8294 ops 829.268 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2124.174: Per-Operation Breakdown
+delete-file          8318ops      832ops/s   0.0mb/s      1.2ms/op [0.09ms - 5770.19ms]
+2124.174: IO Summary:  8318 ops 831.644 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2134.176: Per-Operation Breakdown
+delete-file          501ops       50ops/s   0.0mb/s     21.6ms/op [0.10ms - 5854.45ms]
+2134.176: IO Summary:   501 ops 50.093 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2144.177: Per-Operation Breakdown
+delete-file          15034ops     1503ops/s   0.0mb/s      0.7ms/op [0.09ms - 1262.46ms]
+2144.177: IO Summary: 15034 ops 1503.198 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2154.178: Per-Operation Breakdown
+delete-file          13786ops     1378ops/s   0.0mb/s      0.3ms/op [0.09ms - 658.97ms]
+2154.178: IO Summary: 13786 ops 1378.404 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2164.181: Per-Operation Breakdown
+delete-file          8319ops      832ops/s   0.0mb/s      1.3ms/op [0.11ms - 7918.87ms]
+2164.181: IO Summary:  8319 ops 831.722 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2174.183: Per-Operation Breakdown
+delete-file          8822ops      882ops/s   0.0mb/s      1.0ms/op [0.09ms - 4848.93ms]
+2174.183: IO Summary:  8822 ops 882.021 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2184.185: Per-Operation Breakdown
+delete-file          1038ops      104ops/s   0.0mb/s     14.5ms/op [0.10ms - 6971.08ms]
+2184.185: IO Summary:  1038 ops 103.775 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2194.187: Per-Operation Breakdown
+delete-file          22952ops     2295ops/s   0.0mb/s      0.4ms/op [0.09ms - 1683.80ms]
+2194.187: IO Summary: 22952 ops 2294.846 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2204.189: Per-Operation Breakdown
+delete-file          6722ops      672ops/s   0.0mb/s      1.5ms/op [0.10ms - 6802.51ms]
+2204.189: IO Summary:  6722 ops 672.069 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2214.191: Per-Operation Breakdown
+delete-file          8760ops      876ops/s   0.0mb/s      1.1ms/op [0.09ms - 6014.79ms]
+2214.191: IO Summary:  8760 ops 875.820 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2224.193: Per-Operation Breakdown
+delete-file          5566ops      556ops/s   0.0mb/s      1.7ms/op [0.09ms - 8070.11ms]
+2224.193: IO Summary:  5566 ops 556.473 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2234.195: Per-Operation Breakdown
+delete-file          7000ops      700ops/s   0.0mb/s      1.4ms/op [0.10ms - 4052.72ms]
+2234.195: IO Summary:  7000 ops 699.864 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2244.197: Per-Operation Breakdown
+delete-file          24887ops     2488ops/s   0.0mb/s      0.4ms/op [0.09ms - 2550.54ms]
+2244.197: IO Summary: 24887 ops 2488.369 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2254.199: Per-Operation Breakdown
+delete-file          0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+2254.199: IO Summary:     0 ops 0.000 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2264.201: Per-Operation Breakdown
+delete-file          9265ops      926ops/s   0.0mb/s      2.2ms/op [0.10ms - 10523.24ms]
+2264.201: IO Summary:  9265 ops 926.351 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2274.203: Per-Operation Breakdown
+delete-file          1893ops      189ops/s   0.0mb/s      4.1ms/op [0.09ms - 1827.19ms]
+2274.203: IO Summary:  1893 ops 189.257 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2284.205: Per-Operation Breakdown
+delete-file          13942ops     1394ops/s   0.0mb/s      0.8ms/op [0.09ms - 4972.43ms]
+2284.205: IO Summary: 13942 ops 1393.950 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2294.207: Per-Operation Breakdown
+delete-file          11905ops     1190ops/s   0.0mb/s      0.3ms/op [0.09ms - 76.58ms]
+2294.207: IO Summary: 11905 ops 1190.264 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2304.209: Per-Operation Breakdown
+delete-file          9106ops      910ops/s   0.0mb/s      1.8ms/op [0.09ms - 7296.39ms]
+2304.209: IO Summary:  9106 ops 910.453 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2314.211: Per-Operation Breakdown
+delete-file          7516ops      751ops/s   0.0mb/s      0.5ms/op [0.10ms - 531.24ms]
+2314.211: IO Summary:  7516 ops 751.457 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2324.213: Per-Operation Breakdown
+delete-file          494ops       49ops/s   0.0mb/s     30.4ms/op [0.11ms - 7793.98ms]
+2324.213: IO Summary:   494 ops 49.392 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2334.214: Per-Operation Breakdown
+delete-file          20990ops     2099ops/s   0.0mb/s      0.5ms/op [0.09ms - 1567.51ms]
+2334.214: IO Summary: 20990 ops 2098.674 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2344.216: Per-Operation Breakdown
+delete-file          16565ops     1656ops/s   0.0mb/s      0.5ms/op [0.09ms - 1364.46ms]
+2344.216: IO Summary: 16565 ops 1656.246 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2354.218: Per-Operation Breakdown
+delete-file          8305ops      830ops/s   0.0mb/s      1.1ms/op [0.10ms - 6786.47ms]
+2354.218: IO Summary:  8305 ops 830.359 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2364.219: Per-Operation Breakdown
+delete-file          0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+2364.219: IO Summary:     0 ops 0.000 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2374.221: Per-Operation Breakdown
+delete-file          6977ops      698ops/s   0.0mb/s      3.2ms/op [0.09ms - 14110.70ms]
+2374.221: IO Summary:  6977 ops 697.572 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2384.223: Per-Operation Breakdown
+delete-file          18162ops     1816ops/s   0.0mb/s      0.5ms/op [0.09ms - 2002.82ms]
+2384.223: IO Summary: 18162 ops 1815.930 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2394.225: Per-Operation Breakdown
+delete-file          6903ops      690ops/s   0.0mb/s      0.2ms/op [0.10ms - 14.40ms]
+2394.225: IO Summary:  6903 ops 690.146 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2404.227: Per-Operation Breakdown
+delete-file          8266ops      826ops/s   0.0mb/s      1.6ms/op [0.09ms - 10494.99ms]
+2404.227: IO Summary:  8266 ops 826.451 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2414.229: Per-Operation Breakdown
+delete-file          823ops       82ops/s   0.0mb/s     17.9ms/op [0.09ms - 7760.19ms]
+2414.229: IO Summary:   823 ops 82.282 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2424.231: Per-Operation Breakdown
+delete-file          22000ops     2200ops/s   0.0mb/s      0.5ms/op [0.09ms - 3232.18ms]
+2424.231: IO Summary: 22000 ops 2199.667 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2434.233: Per-Operation Breakdown
+delete-file          10967ops     1096ops/s   0.0mb/s      0.3ms/op [0.10ms - 97.55ms]
+2434.233: IO Summary: 10967 ops 1096.477 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2444.235: Per-Operation Breakdown
+delete-file          8298ops      830ops/s   0.0mb/s      1.6ms/op [0.09ms - 10049.57ms]
+2444.235: IO Summary:  8298 ops 829.650 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2454.236: Per-Operation Breakdown
+delete-file          735ops       73ops/s   0.0mb/s     17.7ms/op [0.10ms - 7790.80ms]
+2454.237: IO Summary:   735 ops 73.488 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2464.238: Per-Operation Breakdown
+delete-file          24876ops     2487ops/s   0.0mb/s      0.4ms/op [0.09ms - 1179.72ms]
+2464.238: IO Summary: 24876 ops 2487.297 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2474.240: Per-Operation Breakdown
+delete-file          8275ops      827ops/s   0.0mb/s      1.1ms/op [0.09ms - 5825.66ms]
+2474.240: IO Summary:  8275 ops 827.334 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2484.242: Per-Operation Breakdown
+delete-file          8330ops      833ops/s   0.0mb/s      1.1ms/op [0.09ms - 6730.23ms]
+2484.242: IO Summary:  8330 ops 832.834 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2494.244: Per-Operation Breakdown
+delete-file          532ops       53ops/s   0.0mb/s     22.9ms/op [0.13ms - 5901.53ms]
+2494.244: IO Summary:   532 ops 53.192 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2504.245: Per-Operation Breakdown
+delete-file          17717ops     1771ops/s   0.0mb/s      0.6ms/op [0.09ms - 1911.55ms]
+2504.245: IO Summary: 17717 ops 1771.427 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2514.247: Per-Operation Breakdown
+delete-file          10091ops     1009ops/s   0.0mb/s      1.0ms/op [0.09ms - 5218.26ms]
+2514.247: IO Summary: 10091 ops 1008.905 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2524.249: Per-Operation Breakdown
+delete-file          10712ops     1071ops/s   0.0mb/s      0.9ms/op [0.10ms - 5739.83ms]
+2524.249: IO Summary: 10712 ops 1071.024 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2534.251: Per-Operation Breakdown
+delete-file          4465ops      446ops/s   0.0mb/s      1.4ms/op [0.10ms - 4994.85ms]
+2534.251: IO Summary:  4465 ops 446.408 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2544.253: Per-Operation Breakdown
+delete-file          11000ops     1100ops/s   0.0mb/s      1.2ms/op [0.10ms - 4405.56ms]
+2544.253: IO Summary: 11000 ops 1099.784 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2554.255: Per-Operation Breakdown
+delete-file          16177ops     1617ops/s   0.0mb/s      0.4ms/op [0.10ms - 949.67ms]
+2554.255: IO Summary: 16177 ops 1617.451 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2564.257: Per-Operation Breakdown
+delete-file          8302ops      830ops/s   0.0mb/s      1.2ms/op [0.09ms - 6804.71ms]
+2564.257: IO Summary:  8302 ops 830.056 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2574.258: Per-Operation Breakdown
+delete-file          8531ops      853ops/s   0.0mb/s      1.7ms/op [0.09ms - 5893.81ms]
+2574.258: IO Summary:  8531 ops 852.952 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2584.260: Per-Operation Breakdown
+delete-file          1990ops      199ops/s   0.0mb/s      4.3ms/op [0.10ms - 4339.75ms]
+2584.260: IO Summary:  1990 ops 198.968 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2594.261: Per-Operation Breakdown
+delete-file          21541ops     2154ops/s   0.0mb/s      0.5ms/op [0.09ms - 2569.45ms]
+2594.261: IO Summary: 21541 ops 2153.824 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2604.263: Per-Operation Breakdown
+delete-file          11785ops     1178ops/s   0.0mb/s      0.8ms/op [0.10ms - 4811.36ms]
+2604.263: IO Summary: 11785 ops 1178.276 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2614.266: Per-Operation Breakdown
+delete-file          8361ops      836ops/s   0.0mb/s      1.2ms/op [0.11ms - 5932.87ms]
+2614.266: IO Summary:  8361 ops 835.917 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2624.268: Per-Operation Breakdown
+delete-file          1314ops      131ops/s   0.0mb/s      8.0ms/op [0.10ms - 5536.19ms]
+2624.268: IO Summary:  1314 ops 131.375 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2634.269: Per-Operation Breakdown
+delete-file          9204ops      920ops/s   0.0mb/s      1.1ms/op [0.09ms - 1640.05ms]
+2634.269: IO Summary:  9204 ops 920.313 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2644.270: Per-Operation Breakdown
+delete-file          16926ops     1692ops/s   0.0mb/s      0.4ms/op [0.09ms - 732.65ms]
+2644.270: IO Summary: 16926 ops 1692.381 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2654.271: Per-Operation Breakdown
+delete-file          8515ops      851ops/s   0.0mb/s      1.6ms/op [0.09ms - 5461.84ms]
+2654.271: IO Summary:  8515 ops 851.386 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2664.273: Per-Operation Breakdown
+delete-file          8354ops      835ops/s   0.0mb/s      1.2ms/op [0.09ms - 6282.64ms]
+2664.273: IO Summary:  8354 ops 835.258 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2674.275: Per-Operation Breakdown
+delete-file          1001ops      100ops/s   0.0mb/s     10.1ms/op [0.09ms - 4895.42ms]
+2674.275: IO Summary:  1001 ops 100.084 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2684.276: Per-Operation Breakdown
+delete-file          25003ops     2500ops/s   0.0mb/s      0.4ms/op [0.09ms - 1156.05ms]
+2684.276: IO Summary: 25003 ops 2499.992 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2694.278: Per-Operation Breakdown
+delete-file          8318ops      832ops/s   0.0mb/s      1.2ms/op [0.10ms - 5762.80ms]
+2694.278: IO Summary:  8318 ops 831.684 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2704.279: Per-Operation Breakdown
+delete-file          8297ops      830ops/s   0.0mb/s      1.2ms/op [0.10ms - 6489.22ms]
+2704.279: IO Summary:  8297 ops 829.579 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2714.282: Per-Operation Breakdown
+delete-file          381ops       38ops/s   0.0mb/s     22.0ms/op [0.15ms - 8197.88ms]
+2714.282: IO Summary:   381 ops 38.091 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2724.283: Per-Operation Breakdown
+delete-file          15922ops     1592ops/s   0.0mb/s      0.8ms/op [0.09ms - 3568.62ms]
+2724.283: IO Summary: 15922 ops 1591.953 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2734.285: Per-Operation Breakdown
+delete-file          9078ops      908ops/s   0.0mb/s      1.0ms/op [0.10ms - 5707.92ms]
+2734.285: IO Summary:  9078 ops 907.647 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2744.287: Per-Operation Breakdown
+delete-file          9000ops      900ops/s   0.0mb/s      1.1ms/op [0.11ms - 5626.44ms]
+2744.287: IO Summary:  9000 ops 899.867 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2754.288: Per-Operation Breakdown
+delete-file          7542ops      754ops/s   0.0mb/s      0.5ms/op [0.10ms - 1217.48ms]
+2754.288: IO Summary:  7542 ops 754.060 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2764.290: Per-Operation Breakdown
+delete-file          9209ops      921ops/s   0.0mb/s      1.9ms/op [0.09ms - 9652.22ms]
+2764.290: IO Summary:  9209 ops 920.748 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2774.292: Per-Operation Breakdown
+delete-file          16202ops     1620ops/s   0.0mb/s      0.4ms/op [0.09ms - 959.25ms]
+2774.292: IO Summary: 16202 ops 1619.943 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2784.294: Per-Operation Breakdown
+delete-file          8047ops      805ops/s   0.0mb/s      1.3ms/op [0.09ms - 5474.10ms]
+2784.294: IO Summary:  8047 ops 804.550 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2794.296: Per-Operation Breakdown
+delete-file          1007ops      101ops/s   0.0mb/s     12.2ms/op [0.09ms - 4995.63ms]
+2794.296: IO Summary:  1007 ops 100.678 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2804.298: Per-Operation Breakdown
+delete-file          15774ops     1577ops/s   0.0mb/s      0.7ms/op [0.10ms - 1692.37ms]
+2804.298: IO Summary: 15774 ops 1577.129 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2814.300: Per-Operation Breakdown
+delete-file          11635ops     1163ops/s   0.0mb/s      0.9ms/op [0.09ms - 5632.57ms]
+2814.300: IO Summary: 11635 ops 1163.261 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2824.302: Per-Operation Breakdown
+delete-file          6213ops      621ops/s   0.0mb/s      1.4ms/op [0.10ms - 6104.13ms]
+2824.302: IO Summary:  6213 ops 621.176 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2834.304: Per-Operation Breakdown
+delete-file          7665ops      766ops/s   0.0mb/s      0.3ms/op [0.09ms - 14.13ms]
+2834.304: IO Summary:  7665 ops 766.335 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2844.306: Per-Operation Breakdown
+delete-file          9704ops      970ops/s   0.0mb/s      1.7ms/op [0.09ms - 8461.32ms]
+2844.306: IO Summary:  9704 ops 970.192 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2854.308: Per-Operation Breakdown
+delete-file          15976ops     1597ops/s   0.0mb/s      0.4ms/op [0.10ms - 967.51ms]
+2854.308: IO Summary: 15976 ops 1597.382 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2860.309: Run took 2016 seconds...
+2860.309: Per-Operation Breakdown
+delete-file          5024ops      837ops/s   0.0mb/s      1.6ms/op [0.10ms - 5167.79ms]
+2860.309: IO Summary:  5024 ops 837.209 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+2860.309: Shutting down processes

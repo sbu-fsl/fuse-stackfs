@@ -1,0 +1,38 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 2393MB of shared memory
+0.127: Populating and pre-allocating filesets
+1.424: bigfileset populated: 2000000 files, avg. dir. width = 1000, avg. dir. depth = 2.1, 0 leafdirs, 7812.500MB total size
+1.424: Removing bigfileset tree (if exists)
+1.427: Pre-allocating directories in bigfileset tree
+1.508: Pre-allocating files in bigfileset tree
+844.028: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+844.028: Population and pre-allocation of filesets completed
+848.162: Attempting to create fileset more than once, ignoring
+848.168: Starting 1 fileopen instances
+849.236: Running...
+859.237: Per-Operation Breakdown
+delete-file          272059ops    27204ops/s   0.0mb/s      1.2ms/op [0.02ms - 45.37ms]
+859.237: IO Summary: 272059 ops 27204.219 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+869.237: Per-Operation Breakdown
+delete-file          266913ops    26690ops/s   0.0mb/s      1.2ms/op [0.02ms - 29.94ms]
+869.237: IO Summary: 266913 ops 26689.589 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+879.238: Per-Operation Breakdown
+delete-file          246918ops    24690ops/s   0.0mb/s      1.3ms/op [0.02ms - 42.70ms]
+879.238: IO Summary: 246918 ops 24689.958 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+889.239: Per-Operation Breakdown
+delete-file          256351ops    25633ops/s   0.0mb/s      1.2ms/op [0.02ms - 29.99ms]
+889.239: IO Summary: 256351 ops 25633.498 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+899.240: Per-Operation Breakdown
+delete-file          252557ops    25254ops/s   0.0mb/s      1.2ms/op [0.02ms - 35.72ms]
+899.240: IO Summary: 252557 ops 25253.862 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+909.241: Per-Operation Breakdown
+delete-file          249582ops    24957ops/s   0.0mb/s      1.3ms/op [0.02ms - 32.82ms]
+909.241: IO Summary: 249582 ops 24956.528 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+919.241: Per-Operation Breakdown
+delete-file          253580ops    25356ops/s   0.0mb/s      1.2ms/op [0.02ms - 41.38ms]
+919.241: IO Summary: 253580 ops 25356.382 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+928.242: Run took 79 seconds...
+928.243: Per-Operation Breakdown
+delete-file          202029ops    22445ops/s   0.0mb/s      1.2ms/op [0.02ms - 24.98ms]
+928.243: IO Summary: 202029 ops 22445.128 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+928.243: Shutting down processes
