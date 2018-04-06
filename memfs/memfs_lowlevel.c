@@ -16,8 +16,7 @@ static char *filecontent;
 
 void init_buff() {
         filecontent = (char *)malloc(FILE_LEN);
-        memset(filecontent, 1, FILE_LEN);
-	//strcpy(filecontent, "mem");
+        memset(filecontent, 0, FILE_LEN);
 }
 
 
