@@ -1,6 +1,8 @@
 #define FUSE_USE_VERSION 31
 
 #include <fuse_lowlevel.h>
+#include <fuse.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +13,22 @@
 
 #define FILE_LEN 10000000
 
-static const char *filename = "00000001";
+struct memfs_info {
+    char *filename;
+} memfs_info;
+
+/* 
+ * arg passing example 
+ * https://libfuse.github.io/doxygen/hello_8c.html
+ */
+
+#define MEMFS_OPT(t, p) { t, offsetof(struct memfs_info, p), 1}
+
+static const struct fuse_opt memfs_opts[] = {
+    MEMFS_OPT("--filename=%s", filename),
+    FUSE_OPT_END
+};
+
 static char *filecontent;
 
 void init_buff() {
@@ -60,7 +77,8 @@ static void mem_ll_lookup(fuse_req_t req, fuse_ino_t parent, const char *name)
 {
 	struct fuse_entry_param e;
 
-	if (parent != 1 || strcmp(name, filename) != 0)
+	if (parent != 1 || strcmp(name, memfs_info.filename) != 0)
+
 		fuse_reply_err(req, ENOENT);
 	else {
 		memset(&e, 0, sizeof(e));
@@ -116,7 +134,7 @@ static void mem_ll_readdir(fuse_req_t req, fuse_ino_t ino, size_t size,
 		memset(&b, 0, sizeof(b));
 		dirbuf_add(req, &b, ".", 1);
 		dirbuf_add(req, &b, "..", 1);
-		dirbuf_add(req, &b, filename, 2);
+		dirbuf_add(req, &b, memfs_info.filename, 2);
 		reply_buf_limited(req, b.p, b.size, off, size);
 		free(b.p);
 	}
@@ -181,6 +199,7 @@ static struct fuse_lowlevel_ops mem_ll_oper = {
 	.write		= mem_ll_write,
 };
 
+
 int main(int argc, char *argv[])
 {
 	struct fuse_args args = FUSE_ARGS_INIT(argc, argv);
@@ -188,12 +207,21 @@ int main(int argc, char *argv[])
 	struct fuse_cmdline_opts opts;
 	int ret = -1;
 	
+    //struct memfs_info m_info;
+    /* default value of the filename */
+    memfs_info.filename = strdup("00000001");
+
+    if (fuse_opt_parse(&args, &memfs_info, memfs_opts, NULL) == -1)
+        return 1;
+
 	init_buff();
 
 	if (fuse_parse_cmdline(&args, &opts) != 0)
 		return 1;
 	if (opts.show_help) {
 		printf("usage: %s [options] <mountpoint>\n\n", argv[0]);
+        printf("[options]: --filename=<filename>\n");
+        printf("Example :   ./memfs --filename=testfile /mnt/tmp\n\n");
 		fuse_cmdline_help();
 		fuse_lowlevel_help();
 		ret = 0;
