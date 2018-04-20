@@ -1,4 +1,10 @@
-Run as follows.
-./memfs /mnt/check_fuse/bigfileset/00000001/
+-> Run as follows. [-d debug logging]
+   ./memfs -d /mnt/check_fuse/bigfileset/00000001/
 
-Need to include the bigfileset path in the mountpath because, memfs doesn't support file creation as of now.
+-> Specify the filename to be created upon starting the fs with --filename tag.
+   If it's not specified, default value of "00000001" is used. 
+   
+   ./memfs --filename=testfile /mnt/check_fuse/bigfileset/00000001/
+
+-> Run with writeback_cache enabled.
+   ./memfs -o writeback_cache /mnt/check_fuse/bigfileset/00000001/

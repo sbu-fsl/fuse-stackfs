@@ -11,7 +11,10 @@
 #include <unistd.h>
 #include <assert.h>
 
-#define FILE_LEN 10000000
+/* 1024 * 1024 */
+#define FILE_LEN 10485760
+
+struct fuse_conn_info_opts* fuse_conn_info_opts_ptr;
 
 struct memfs_info {
     char *filename;
@@ -51,6 +54,7 @@ static int mem_stat(fuse_ino_t ino, struct stat *stbuf)
 		stbuf->st_mode = S_IFREG | 0777;
 		stbuf->st_nlink = 1;
 		stbuf->st_size = strlen(filecontent);
+		//stbuf->st_size = FILE_LEN;
 		break;
 
 	default:
@@ -154,7 +158,7 @@ static void mem_ll_open(fuse_req_t req, fuse_ino_t ino,
 static void mem_ll_write(fuse_req_t req, fuse_ino_t ino, const char *buf,
 		size_t size, off_t off, struct fuse_file_info *fi) 
 {
-	//printf("trying to write to %s\n", path);
+	printf("trying to write to offset [%d] size [%d]\n", (int)off, (int)size);
 	(void) ino;
 
 	if (off >= FILE_LEN) 
@@ -165,6 +169,17 @@ static void mem_ll_write(fuse_req_t req, fuse_ino_t ino, const char *buf,
 
 	memcpy(filecontent + off, buf, size);
 	fuse_reply_write(req, size);
+}
+
+static void mem_ll_init(void *userdata,
+        struct fuse_conn_info *conn)
+{
+    /*
+     * fuse_session_new() no longer accepts arguments
+     * command line options can only be set using fuse_apply_conn_info_opts().
+     */
+    fuse_apply_conn_info_opts(fuse_conn_info_opts_ptr, conn);
+
 }
 
 static void mem_ll_read(fuse_req_t req, fuse_ino_t ino, size_t size,
@@ -191,6 +206,7 @@ static void mem_ll_read(fuse_req_t req, fuse_ino_t ino, size_t size,
 
 
 static struct fuse_lowlevel_ops mem_ll_oper = {
+    .init       = mem_ll_init,
 	.lookup		= mem_ll_lookup,
 	.getattr	= mem_ll_getattr,
 	.readdir	= mem_ll_readdir,
@@ -210,6 +226,9 @@ int main(int argc, char *argv[])
     //struct memfs_info m_info;
     /* default value of the filename */
     memfs_info.filename = strdup("00000001");
+
+    /* accept options like -o writeback_cache */
+    fuse_conn_info_opts_ptr = fuse_parse_conn_info_opts(&args);
 
     if (fuse_opt_parse(&args, &memfs_info, memfs_opts, NULL) == -1)
         return 1;
