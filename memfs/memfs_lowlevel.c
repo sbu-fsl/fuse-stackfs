@@ -1,3 +1,17 @@
+/*
+ * Copyright (c) 2018      Manu Mathew
+ * Copyright (c) 2016-2017 Bharath Kumar Reddy Vangoor
+ * Copyright (c) 2017      Swaminathan Sivaraman
+ * Copyright (c) 2016-2018 Vasily Tarasov
+ * Copyright (c) 2016-2018 Erez Zadok
+ * Copyright (c) 2016-2018 Stony Brook University
+ * Copyright (c) 2016-2018 The Research Foundation of SUNY
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
 #define FUSE_USE_VERSION 31
 
 #include <fuse_lowlevel.h>
